@@ -1,0 +1,75 @@
+body {
+    /* background-color: #151515; */
+    background-color: #000000;
+}
+
+button {
+    outline: none; /* Для синий ободки */
+    border: 0;
+    background: transparent;
+}
+
+button:active:after {
+    background: #639CD9;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    margin: 5px;
+    padding: 10px;
+    /* background-color: #222831; */
+    background-color: #000000;
+    color: aliceblue;
+    height: 140px;
+    /* width: 200px; */
+}
+
+.title {
+    font-size: 17px;
+    /* border-bottom: 1px #639CD9 solid; */
+    border-bottom: 1px #00deff solid;
+
+    /* border-image: linear-gradient(20deg, #f920ee 0%, #00deff 65%);
+    border-image-slice: 1; */
+    
+}
+
+.smile {
+    font-size: 22px;    
+    position: relative;
+    top: 10px;
+    white-space: nowrap;
+}
+
+.gradient-border {
+    --angle: 0deg;
+    
+    border: 1px solid;
+    /* border-image: linear-gradient(20deg, #f920ee 38%, #00deff 65%); */
+    border-image: linear-gradient(var(--angle), #f920ee 38%, #00deff 65%);
+    border-image-slice: 1;
+    /* border: 1px transparent solid */
+
+    animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
