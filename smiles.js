@@ -37,29 +37,40 @@ for (var x = 0; x < smiles.length; x++) {
 
 function generateCard(title, smile) {
     var div = document.createElement('div')
-    div.innerHTML = `<button onclick=copy(this)><div class="card gradient-border">
-    <p class="title">${title}</p>
+    div.innerHTML = `<div class="card gradient-border">
+    <p class="title text-center">${title}</p>
     <div class="smile">
-    <p>${smile}</p>
+    <p class="text-center">${smile}</p>
     </div>
-    </div></button>`;
+    </div>`;
+
+    
+
     document.getElementById('btns').appendChild(div);
 }
 
-function copyTextToClipboard(text) {
-    if (!navigator.clipboard) {
-      fallbackCopyTextToClipboard(text);
-      return;
-    }
-    navigator.clipboard.writeText(text).then(function() {
-      console.log('Async: Copying to clipboard was successful!');
-    }, function(err) {
-      console.error('Async: Could not copy text: ', err);
-    });
-}
+// function copyTextToClipboard(text) {
+//     // if (!navigator.clipboard) {
+//     //   fallbackCopyTextToClipboard(text);
+//     //   return;
+//     // }
+//     // navigator.clipboard.writeText(text).then(function() {
+//     //   console.log('Async: Copying to clipboard was successful!');
+//     // }, function(err) {
+//     //   console.error('Async: Could not copy text: ', err);
+//     // });
 
-function copy(Element) {
-    text = Element.getElementsByClassName("smile")[0].textContent
-    console.log(text)
-    copyTextToClipboard(text)
-}
+//     navigator.clipboard.writeText(text)
+//     .then(() => {
+//       // Получилось!
+//     })
+//     .catch(err => {
+//     console.log('Something went wrong', err);
+//     });
+// }
+
+// function copy(Element) {
+//     text = Element.getElementsByClassName("smile")[0].textContent
+//     // console.log(text)
+//     copyTextToClipboard(text)
+// }
